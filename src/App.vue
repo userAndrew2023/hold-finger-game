@@ -113,10 +113,16 @@ export default {
     },
     printAgent() {
       return navigator.userAgent;
+    },
+    testhandler(object) {
+      if (!window.Telegram.WebApp.isExpanded) {
+        window.Telegram.WebApp.expand();
+      }
     }
   },
   mounted() {
     window.Telegram.WebApp.expand();
+    window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler)
   }
 };
 </script>
