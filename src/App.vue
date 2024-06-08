@@ -9,7 +9,6 @@ vue
         class="hold-area"
         @touchstart="startHold"
         @touchend="endHold"
-        @scroll="endHold"
       >
         <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
       </div>
@@ -125,6 +124,7 @@ export default {
   mounted() {
     window.Telegram.WebApp.expand();
     window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler);
+    event.preventDefault();
   }
 };
 </script>
