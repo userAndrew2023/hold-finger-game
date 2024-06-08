@@ -2,18 +2,24 @@ vue
 Копировать код
 <template>
   <div id="app">
-    <div class="money">{{ money }}</div>
-    <h2 class="tip">Hold Your Finger</h2>
-    <div
-      class="hold-area"
-      @mousedown="startHold"
-      @mouseup="endHold"
-      @touchstart="startHold"
-      @touchend="endHold"
-    >
-      <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
+    <div v-if="isMobile()">
+      <div class="money">{{ money }}</div>
+      <h2 class="tip">Hold Your Finger</h2>
+      <div
+        class="hold-area"
+        @mousedown="startHold"
+        @mouseup="endHold"
+        @touchstart="startHold"
+        @touchend="endHold"
+      >
+        <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
+      </div>
+      <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
     </div>
-    <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
+    <div v-else class="leave-desktop">
+      Play on the mobile
+    </div>
+    {{ printAgent() }}
   </div>
 </template>
 
@@ -65,6 +71,11 @@ html {
   font-size: 48px;
   font-weight: 700;
 }
+
+.leave-desktop {
+  font-size: 72px;
+  font-weight: 600;
+}
 </style>
 
 <script>
@@ -100,6 +111,12 @@ export default {
     },
     formatSeconds(number) {
       return number.toString().includes(".") ? number.toString() : number.toString() + ".0"
+    },
+    isMobile() {
+      return true;
+    },
+    printAgent() {
+      return navigator.userAgent;
     }
   }
 };
