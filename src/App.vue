@@ -1,5 +1,3 @@
-vue
-Копировать код
 <template>
   <div id="app">
     <div v-if="isMobile()">
@@ -20,7 +18,40 @@ vue
         <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
       </div>
       <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
-      <div class="navbar">Common</div>
+      <div class="navbar">
+        <div class="navbar-item">
+          <span class="material-symbols-outlined">
+            home
+          </span>
+          <div>
+            Home
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="material-symbols-outlined">
+            assignment
+          </span>
+          <div>
+            Tasks
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="material-symbols-outlined">
+            rocket_launch
+          </span>
+          <div>
+            Boosts
+          </div>
+        </div>
+        <div class="navbar-item">
+          <span class="material-symbols-outlined">
+            group
+          </span>
+          <div>
+            Frens
+          </div>
+        </div>
+      </div>
     </div>
     <div v-else class="leave-desktop">
       Play on the mobile
@@ -37,8 +68,13 @@ html {
   background-size: cover;
   height: 100%;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
 #app {
-  font-family: 'Lexend', sans-serif;  text-align: center;
+  font-family: 'Lexend', sans-serif;
+  text-align: center;
   margin-top: 60px;
   color: white;
   -moz-user-select: none;
@@ -64,11 +100,9 @@ html {
 .hold-button-active {
   scale: 0.93;
 }
-
 .tip {
   margin-top: 50px;
 }
-
 @media (min-width: 768px) {
   .hold-area {
     width: 300px;
@@ -105,10 +139,20 @@ html {
   margin-right: 7px;
 }
 .navbar {
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   position: fixed;
+  margin-bottom: 15px;
   bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0 10%;
+}
+.navbar-item {
   text-align: center;
-  width: 100%;
 }
 </style>
 
@@ -139,7 +183,7 @@ export default {
           this.holdTime = Number((this.holdTime).toFixed(1));
           if (Number.isInteger(this.holdTime)) {
             this.money += 1;
-          } 
+          }
         }, 100);
       }
     },
