@@ -29,6 +29,9 @@ html {
   background-size: cover;
   height: 100%;
 }
+body {
+  overflow: hidden;
+}
 #app {
   font-family: 'Lexend', sans-serif;  text-align: center;
   margin-top: 60px;
