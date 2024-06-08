@@ -30,15 +30,12 @@ html {
   height: 100%;
 }
 #app {
-  position: fixed;
-  overflow: auto;
   font-family: 'Lexend', sans-serif;  text-align: center;
   margin-top: 60px;
   color: white;
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
-  height: 100%;
 }
 .hold-area {
   width: 70%;
