@@ -38,6 +38,7 @@ html {
   -moz-user-select: none;
   -webkit-user-select: none;
   user-select: none;
+  height: 100%;
 }
 .hold-area {
   width: 70%;
