@@ -90,7 +90,13 @@ export default {
         event.preventDefault();
         this.holding = true;
         this.holdTime = 0;
+        let oldHeight = window.Telegram.WebApp.viewportHeight;
         this.intervalId = setInterval(() => {
+          if (oldHeight != window.Telegram.WebApp.viewportHeight) {
+            endHold();
+            return;
+          
+          oldHeight = window.Telegram.WebApp.viewportHeight;
           this.holdTime += 0.1;
           this.holdTime = Number((this.holdTime).toFixed(1));
           if (Number.isInteger(this.holdTime)) {
@@ -124,7 +130,6 @@ export default {
   mounted() {
     window.Telegram.WebApp.expand();
     window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler);
-    event.preventDefault();
   }
 };
 </script>
