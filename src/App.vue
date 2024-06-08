@@ -30,6 +30,7 @@ html {
   height: 100%;
 }
 body {
+   touch-action: none !important;
 }
 #app {
   font-family: 'Lexend', sans-serif;  text-align: center;
