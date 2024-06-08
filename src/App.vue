@@ -7,8 +7,6 @@ vue
       <h2 class="tip">Hold Your Finger</h2>
       <div
         class="hold-area"
-        @mousedown="startHold"
-        @mouseup="endHold"
         @touchstart="startHold"
         @touchend="endHold"
       >
