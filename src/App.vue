@@ -123,6 +123,7 @@ export default {
   mounted() {
     window.Telegram.WebApp.expand();
     window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler);
+    window.Telegram.WebApp.isClosingConfirmationEnabled = true;
   }
 };
 </script>
