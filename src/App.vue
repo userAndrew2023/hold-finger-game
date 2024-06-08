@@ -24,6 +24,7 @@ vue
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 html {
+  overflow: hidden;
   background: linear-gradient(#333333, #000);
   background-position: center;
   background-repeat: no-repeat;
