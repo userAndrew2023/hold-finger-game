@@ -93,7 +93,7 @@ export default {
         let oldHeight = window.Telegram.WebApp.viewportHeight;
         this.intervalId = setInterval(() => {
           if (oldHeight != window.Telegram.WebApp.viewportHeight) {
-            endHold();
+            this.endHold();
             return;
           }
           oldHeight = window.Telegram.WebApp.viewportHeight;
