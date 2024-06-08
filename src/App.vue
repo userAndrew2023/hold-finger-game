@@ -114,6 +114,9 @@ export default {
     printAgent() {
       return navigator.userAgent;
     }
+  },
+  mounted() {
+    window.Telegram.WebApp.expand();
   }
 };
 </script>
