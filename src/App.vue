@@ -75,7 +75,7 @@ body {
 #app {
   font-family: 'Lexend', sans-serif;
   text-align: center;
-  margin-top: 60px;
+  margin-top: 30px;
   color: white;
   -moz-user-select: none;
   -webkit-user-select: none;
