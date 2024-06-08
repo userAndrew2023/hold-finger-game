@@ -1,30 +1,106 @@
+vue
+Копировать код
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div id="app">
+    <div class="money">{{ money }}</div>
+    <h2 class="tip">Hold Your Finger</h2>
+    <div
+      class="hold-area"
+      @mousedown="startHold"
+      @mouseup="endHold"
+      @touchstart="startHold"
+      @touchend="endHold"
+    >
+      <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
+    </div>
+    <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
+  </div>
 </template>
 
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
+
+html {
+  background: linear-gradient(#333333, #000);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100%;
+}
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+  font-family: 'Lexend', sans-serif;  text-align: center;
+  margin-top: 60px;
+  color: white;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+.hold-area {
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  touch-action: none;
+}
+.hold-button {
+  width: 100%;
+  border-radius: 50%;
+  transition: .1s;
+}
+.hold-button-active {
+  scale: 0.93;
 }
 
-nav {
-  padding: 30px;
+@media (min-width: 768px) {
+  .hold-area {
+    width: 300px;
+  }
 }
 
-nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-nav a.router-link-exact-active {
-  color: #42b983;
+.money {
+  font-size: 48px;
+  font-weight: 700;
 }
 </style>
+
+<script>
+export default {
+  data() {
+    return {
+      holdTime: 0,
+      money: 0,
+      holding: false,
+      intervalId: null,
+    };
+  },
+  methods: {
+    startHold() {
+      if (!this.holding) {
+        event.preventDefault();
+        this.holding = true;
+        this.holdTime = 0;
+        this.intervalId = setInterval(() => {
+          this.holdTime += 0.1;
+          this.holdTime = Number((this.holdTime).toFixed(1));
+          if (Number.isInteger(this.holdTime)) {
+            this.money += 1;
+          } 
+        }, 100);
+      }
+    },
+    endHold() {
+      if (this.holding) {
+        this.holding = false;
+        clearInterval(this.intervalId);
+      }
+    },
+    formatSeconds(number) {
+      return number.toString().includes(".") ? number.toString() : number.toString() + ".0"
+    }
+  }
+};
+</script>
