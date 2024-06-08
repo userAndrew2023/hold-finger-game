@@ -20,6 +20,7 @@ vue
         <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
       </div>
       <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
+      <div class="navbar">Common</div>
     </div>
     <div v-else class="leave-desktop">
       Play on the mobile
@@ -102,6 +103,12 @@ html {
   height: 20px;
   border-radius: 50%;
   margin-right: 7px;
+}
+.navbar {
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
 }
 </style>
 
