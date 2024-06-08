@@ -13,36 +13,6 @@ vue
         <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
       </div>
       <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
-      <div class="money">{{ money }}</div>
-      <h2 class="tip">Hold Your Finger</h2>
-      <div
-        class="hold-area"
-        @touchstart="startHold"
-        @touchend="endHold"
-      >
-        <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
-      </div>
-      <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
-      <div class="money">{{ money }}</div>
-      <h2 class="tip">Hold Your Finger</h2>
-      <div
-        class="hold-area"
-        @touchstart="startHold"
-        @touchend="endHold"
-      >
-        <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
-      </div>
-      <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
-      <div class="money">{{ money }}</div>
-      <h2 class="tip">Hold Your Finger</h2>
-      <div
-        class="hold-area"
-        @touchstart="startHold"
-        @touchend="endHold"
-      >
-        <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
-      </div>
-      <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
     </div>
     <div v-else class="leave-desktop">
       Play on the mobile
