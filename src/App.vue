@@ -3,7 +3,14 @@ vue
 <template>
   <div id="app">
     <div v-if="isMobile()">
-      <div class="money">{{ money }}</div>
+      <div class="money">
+        <img src="@/assets/image.png" class="mini-logo">
+        <div>{{ money }}</div>
+      </div>
+      <div class="league">
+        <div class="league-color"></div>
+        <div>Gold ― 4%</div>
+      </div>
       <h2 class="tip">Hold Your Finger</h2>
       <div
         class="hold-area"
@@ -23,7 +30,7 @@ vue
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 html {
-  background: linear-gradient(#333333, #000);
+  background: linear-gradient(#000, #1a1a1a, #808080);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -57,20 +64,44 @@ html {
   scale: 0.93;
 }
 
+.tip {
+  margin-top: 50px;
+}
+
 @media (min-width: 768px) {
   .hold-area {
     width: 300px;
   }
 }
-
 .money {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 48px;
   font-weight: 700;
 }
-
 .leave-desktop {
   font-size: 72px;
   font-weight: 600;
+}
+.mini-logo {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+}
+.league {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 12px;
+}
+.league-color {
+  background-color: #ffd700;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  margin-right: 7px;
 }
 </style>
 
