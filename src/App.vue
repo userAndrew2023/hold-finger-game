@@ -19,7 +19,6 @@ vue
     <div v-else class="leave-desktop">
       Play on the mobile
     </div>
-    {{ printAgent() }}
   </div>
 </template>
 
