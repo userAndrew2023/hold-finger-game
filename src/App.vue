@@ -8,7 +8,7 @@ vue
       <div
         class="hold-area"
         @touchstart="startHold"
-        @mousedown="endHold"
+        @touchcancel="endHold"
       >
         <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
       </div>
@@ -116,7 +116,7 @@ export default {
     },
     testhandler(object) {
       if (!window.Telegram.WebApp.isExpanded) {
-        this.endHold();
+        this.endHold()
         window.Telegram.WebApp.expand();
       }
     }
