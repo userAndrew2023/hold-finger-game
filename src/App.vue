@@ -116,31 +116,14 @@ export default {
     },
     testhandler(object) {
       if (!window.Telegram.WebApp.isExpanded) {
+        this.endHold();
         window.Telegram.WebApp.expand();
       }
-    },
-    ensureDocumentIsScrollable() {
-        const isScrollable =
-          document.documentElement.scrollHeight > window.innerHeight;
-        if (!isScrollable) {
-          document.documentElement.style.setProperty(
-            "height",
-            "calc(100vh + 1px)",
-            "important"
-          );
-        }
-      },
-      preventCollapse() {
-        if (window.scrollY === 0) {
-          window.scrollTo(0, 1);
-        }
-      }
+    }
   },
   mounted() {
     window.Telegram.WebApp.expand();
     window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler);
-    const scrollableElement = document.querySelector(".scrollable-element");
-    scrollableElement.addEventListener("touchstart", this.preventCollapse);
-    window.addEventListener("load", this.ensureDocumentIsScrollable);  }
+  }
 };
 </script>
