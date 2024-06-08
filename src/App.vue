@@ -30,7 +30,6 @@ html {
   height: 100%;
 }
 body {
-  overflow: hidden;
 }
 #app {
   font-family: 'Lexend', sans-serif;  text-align: center;
@@ -125,7 +124,12 @@ export default {
   },
   mounted() {
     window.Telegram.WebApp.expand();
-    window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler)
+    window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler);
+    document.addEventListener("touchmove", function(event) {
+      event.preventDefault();
+    }, {
+      passive: false
+    });
   }
 };
 </script>
