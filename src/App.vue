@@ -8,7 +8,8 @@ vue
       <div
         class="hold-area"
         @touchstart="startHold"
-        @touchcancel="endHold"
+        @touchend="endHold"
+        @scroll="endHold"
       >
         <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
       </div>
