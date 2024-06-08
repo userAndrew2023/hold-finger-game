@@ -7,8 +7,8 @@ vue
       <h2 class="tip">Hold Your Finger</h2>
       <div
         class="hold-area"
-        @touchstart="startHold"
-        @touchend="endHold"
+        @pointerup="startHold"
+        @pointerdown="endHold"
       >
         <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
       </div>
