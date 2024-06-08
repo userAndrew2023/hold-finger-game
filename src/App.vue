@@ -22,9 +22,6 @@ vue
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
-body {
-  touch-action: none !important;
-}
 html {
   background: linear-gradient(#333333, #000);
   background-position: center;
@@ -117,6 +114,14 @@ export default {
     printAgent() {
       return navigator.userAgent;
     }
+  },
+  mounted() {
+    const overflow = 100
+    document.body.style.overflowY = 'hidden'
+    document.body.style.marginTop = `${overflow}px`
+    document.body.style.height = window.innerHeight + overflow + "px"
+    document.body.style.paddingBottom = `${overflow}px`
+    window.scrollTo(0, overflow)
   }
 };
 </script>
