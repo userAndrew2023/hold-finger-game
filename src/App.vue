@@ -95,7 +95,7 @@ export default {
           if (oldHeight != window.Telegram.WebApp.viewportHeight) {
             endHold();
             return;
-          
+          }
           oldHeight = window.Telegram.WebApp.viewportHeight;
           this.holdTime += 0.1;
           this.holdTime = Number((this.holdTime).toFixed(1));
