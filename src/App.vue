@@ -140,7 +140,7 @@ export default {
     window.Telegram.WebApp.expand();
     window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler);
     const scrollableElement = document.querySelector(".scrollable-element");
-    scrollableElement.addEventListener("touchstart", preventCollapse);
-    window.addEventListener("load", ensureDocumentIsScrollable);  }
+    scrollableElement.addEventListener("touchstart", this.preventCollapse);
+    window.addEventListener("load", this.ensureDocumentIsScrollable);  }
 };
 </script>
