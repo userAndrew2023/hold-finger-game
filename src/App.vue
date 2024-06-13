@@ -10,7 +10,6 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 html {
-  background-color: black;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -22,6 +21,7 @@ body {
   padding: 0;
 }
 #app {
+  background-color: black;
   font-family: 'Lexend', sans-serif;
   text-align: center;
   color: white;
