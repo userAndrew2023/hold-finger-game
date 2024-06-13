@@ -1,61 +1,9 @@
 <template>
   <div id="app">
-    <div v-if="isMobile()">
-      <div class="money">
-        <img src="@/assets/image.png" class="mini-logo">
-        <div>{{ money }}</div>
-      </div>
-      <div class="league">
-        <div class="league-color"></div>
-        <div>Gold ― 4%</div>
-      </div>
-      <h2 class="tip">Hold Your Finger</h2>
-      <div
-        class="hold-area"
-        @touchstart="startHold"
-        @touchend="endHold"
-      >
-        <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
-      </div>
-      <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
-      <div class="navbar">
-        <div class="navbar-item">
-          <span class="material-symbols-outlined">
-            home
-          </span>
-          <div>
-            Home
-          </div>
-        </div>
-        <div class="navbar-item">
-          <span class="material-symbols-outlined">
-            assignment
-          </span>
-          <div>
-            Tasks
-          </div>
-        </div>
-        <div class="navbar-item">
-          <span class="material-symbols-outlined">
-            rocket_launch
-          </span>
-          <div>
-            Boosts
-          </div>
-        </div>
-        <div class="navbar-item">
-          <span class="material-symbols-outlined">
-            group
-          </span>
-          <div>
-            Frens
-          </div>
-        </div>
-      </div>
+    <div>
+      <router-view :key="$route.fullPath"></router-view>
     </div>
-    <div v-else class="leave-desktop">
-      Play on the mobile
-    </div>
+    <nav-bar></nav-bar>
   </div>
 </template>
 
@@ -81,137 +29,19 @@ body {
   -webkit-user-select: none;
   user-select: none;
 }
-.hold-area {
-  width: 70%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
-  -moz-user-select: none;
-  -webkit-user-select: none;
-  user-select: none;
-  touch-action: none;
-}
-.hold-button {
-  width: 100%;
-  border-radius: 50%;
-  transition: .1s;
-}
-.hold-button-active {
-  scale: 0.93;
-}
-.tip {
-  margin-top: 50px;
-}
-@media (min-width: 768px) {
-  .hold-area {
-    width: 300px;
-  }
-}
-.money {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 48px;
-  font-weight: 700;
-}
-.leave-desktop {
-  font-size: 72px;
-  font-weight: 600;
-}
-.mini-logo {
-  border-radius: 50%;
-  width: 50px;
-  height: 50px;
-  margin-right: 10px;
-}
-.league {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 12px;
-}
-.league-color {
-  background-color: #ffd700;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  margin-right: 7px;
-}
-.navbar {
-  font-size: 14px;
-  font-weight: 500;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: fixed;
-  margin-bottom: 15px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding: 0 10%;
-}
-.navbar-item {
-  text-align: center;
-}
 </style>
 
 <script>
+import mockLevels from './data/mockLevels.ts'
+import NavBar from '@/components/NavBar.vue'
+
 export default {
-  data() {
-    return {
-      holdTime: 0,
-      money: 0,
-      holding: false,
-      intervalId: null,
-    };
-  },
-  methods: {
-    startHold() {
-      if (!this.holding) {
-        event.preventDefault();
-        this.holding = true;
-        this.holdTime = 0;
-        let oldHeight = window.Telegram.WebApp.viewportHeight;
-        this.intervalId = setInterval(() => {
-          if (oldHeight != window.Telegram.WebApp.viewportHeight) {
-            this.endHold();
-            return;
-          }
-          oldHeight = window.Telegram.WebApp.viewportHeight;
-          this.holdTime += 0.1;
-          this.holdTime = Number((this.holdTime).toFixed(1));
-          if (Number.isInteger(this.holdTime)) {
-            this.money += 1;
-          }
-        }, 100);
-      }
-    },
-    endHold() {
-      if (this.holding) {
-        this.holding = false;
-        clearInterval(this.intervalId);
-      }
-    },
-    formatSeconds(number) {
-      return number.toString().includes(".") ? number.toString() : number.toString() + ".0"
-    },
-    isMobile() {
-      return true;
-    },
-    printAgent() {
-      return navigator.userAgent;
-    },
-    testhandler(object) {
-      if (!window.Telegram.WebApp.isExpanded) {
-        this.endHold()
-        window.Telegram.WebApp.expand();
-      }
-    }
-  },
   mounted() {
     window.Telegram.WebApp.expand();
     window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler);
+  },
+  components: {
+    NavBar
   }
 };
 </script>
