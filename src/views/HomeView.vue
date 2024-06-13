@@ -135,6 +135,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 48px;
+  padding-top: 30px;
   font-weight: 700;
 }
 .leave-desktop {
