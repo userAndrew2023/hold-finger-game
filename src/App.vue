@@ -3,6 +3,7 @@
     <div>
       <router-view :key="$route.fullPath"></router-view>
     </div>
+    <nav-bar></nav-bar>
   </div>
 </template>
 
@@ -32,6 +33,7 @@ body {
 
 <script>
 import mockLevels from './data/mockLevels.ts'
+import NavBar from '@/components/NavBar.vue'
 
 export default {
   mounted() {
@@ -39,6 +41,7 @@ export default {
     window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler);
   },
   components: {
+    NavBar
   }
 };
 </script>

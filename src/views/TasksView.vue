@@ -1,252 +1,243 @@
 <template>
-    <div>
-        <div class="tasks_wrapper">
-            <div class="tasks_group">
-                <div class="task">
-                    <div class="task-inner">
-                        <div class="task-logo-wrapper">
-                            <img src="@/assets/logo.png" class="task-logo">
-                        </div>
-                        <div class="task-desc">
-                            <div class="task-name">
-                                Mine 1000 KTC
-                            </div>
-                            <div class="task-coin-logo-wrapper">
-                                <img src="@/assets/image.png" class="task-coin-logo">
-                                <div class="task-money">+5000</div>
-                            </div>
-                        </div>
+    <div class="tasks_wrapper">
+        <div class="tasks_group">
+            <div class="task">
+                <div class="task-inner">
+                    <div class="task-logo-wrapper">
+                        <img src="@/assets/logo.png" class="task-logo">
                     </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span>
+                    <div class="task-desc">
+                        <div class="task-name">
+                            Mine 1000 KTC
+                        </div>
+                        <div class="task-coin-logo-wrapper">
+                            <img src="@/assets/image.png" class="task-coin-logo">
+                            <div class="task-money">+5000</div>
+                        </div>
                     </div>
                 </div>
-                <div class="task">
-                    <div class="task-inner">
-                        <div class="task-logo-wrapper">
-                            <img src="@/assets/logo.png" class="task-logo">
-                        </div>
-                        <div class="task-desc">
-                            <div class="task-name">
-                                Mine 1000 KTC
-                            </div>
-                            <div class="task-coin-logo-wrapper">
-                                <img src="@/assets/image.png" class="task-coin-logo">
-                                <div class="task-money">+5000</div>
-                            </div>
-                        </div>
+                <div>
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-inner">
+                    <div class="task-logo-wrapper">
+                        <img src="@/assets/logo.png" class="task-logo">
                     </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span>
+                    <div class="task-desc">
+                        <div class="task-name">
+                            Mine 1000 KTC
+                        </div>
+                        <div class="task-coin-logo-wrapper">
+                            <img src="@/assets/image.png" class="task-coin-logo">
+                            <div class="task-money">+5000</div>
+                        </div>
                     </div>
                 </div>
-                <div class="task">
-                    <div class="task-inner">
-                        <div class="task-logo-wrapper">
-                            <img src="@/assets/logo.png" class="task-logo">
-                        </div>
-                        <div class="task-desc">
-                            <div class="task-name">
-                                Mine 1000 KTC
-                            </div>
-                            <div class="task-coin-logo-wrapper">
-                                <img src="@/assets/image.png" class="task-coin-logo">
-                                <div class="task-money">+5000</div>
-                            </div>
-                        </div>
+                <div>
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-inner">
+                    <div class="task-logo-wrapper">
+                        <img src="@/assets/logo.png" class="task-logo">
                     </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span>
+                    <div class="task-desc">
+                        <div class="task-name">
+                            Mine 1000 KTC
+                        </div>
+                        <div class="task-coin-logo-wrapper">
+                            <img src="@/assets/image.png" class="task-coin-logo">
+                            <div class="task-money">+5000</div>
+                        </div>
                     </div>
                 </div>
-                <div class="task">
-                    <div class="task-inner">
-                        <div class="task-logo-wrapper">
-                            <img src="@/assets/logo.png" class="task-logo">
-                        </div>
-                        <div class="task-desc">
-                            <div class="task-name">
-                                Mine 1000 KTC
-                            </div>
-                            <div class="task-coin-logo-wrapper">
-                                <img src="@/assets/image.png" class="task-coin-logo">
-                                <div class="task-money">+5000</div>
-                            </div>
-                        </div>
+                <div>
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-inner">
+                    <div class="task-logo-wrapper">
+                        <img src="@/assets/logo.png" class="task-logo">
                     </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span>
+                    <div class="task-desc">
+                        <div class="task-name">
+                            Mine 1000 KTC
+                        </div>
+                        <div class="task-coin-logo-wrapper">
+                            <img src="@/assets/image.png" class="task-coin-logo">
+                            <div class="task-money">+5000</div>
+                        </div>
                     </div>
                 </div>
-                <div class="task">
-                    <div class="task-inner">
-                        <div class="task-logo-wrapper">
-                            <img src="@/assets/logo.png" class="task-logo">
-                        </div>
-                        <div class="task-desc">
-                            <div class="task-name">
-                                Mine 1000 KTC
-                            </div>
-                            <div class="task-coin-logo-wrapper">
-                                <img src="@/assets/image.png" class="task-coin-logo">
-                                <div class="task-money">+5000</div>
-                            </div>
-                        </div>
+                <div>
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-inner">
+                    <div class="task-logo-wrapper">
+                        <img src="@/assets/logo.png" class="task-logo">
                     </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span>
+                    <div class="task-desc">
+                        <div class="task-name">
+                            Mine 1000 KTC
+                        </div>
+                        <div class="task-coin-logo-wrapper">
+                            <img src="@/assets/image.png" class="task-coin-logo">
+                            <div class="task-money">+5000</div>
+                        </div>
                     </div>
                 </div>
-                <div class="task">
-                    <div class="task-inner">
-                        <div class="task-logo-wrapper">
-                            <img src="@/assets/logo.png" class="task-logo">
-                        </div>
-                        <div class="task-desc">
-                            <div class="task-name">
-                                Mine 1000 KTC
-                            </div>
-                            <div class="task-coin-logo-wrapper">
-                                <img src="@/assets/image.png" class="task-coin-logo">
-                                <div class="task-money">+5000</div>
-                            </div>
-                        </div>
+                <div>
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-inner">
+                    <div class="task-logo-wrapper">
+                        <img src="@/assets/logo.png" class="task-logo">
                     </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span>
+                    <div class="task-desc">
+                        <div class="task-name">
+                            Mine 1000 KTC
+                        </div>
+                        <div class="task-coin-logo-wrapper">
+                            <img src="@/assets/image.png" class="task-coin-logo">
+                            <div class="task-money">+5000</div>
+                        </div>
                     </div>
                 </div>
-                <div class="task">
-                    <div class="task-inner">
-                        <div class="task-logo-wrapper">
-                            <img src="@/assets/logo.png" class="task-logo">
-                        </div>
-                        <div class="task-desc">
-                            <div class="task-name">
-                                Mine 1000 KTC
-                            </div>
-                            <div class="task-coin-logo-wrapper">
-                                <img src="@/assets/image.png" class="task-coin-logo">
-                                <div class="task-money">+5000</div>
-                            </div>
-                        </div>
+                <div>
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-inner">
+                    <div class="task-logo-wrapper">
+                        <img src="@/assets/logo.png" class="task-logo">
                     </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span>
+                    <div class="task-desc">
+                        <div class="task-name">
+                            Mine 1000 KTC
+                        </div>
+                        <div class="task-coin-logo-wrapper">
+                            <img src="@/assets/image.png" class="task-coin-logo">
+                            <div class="task-money">+5000</div>
+                        </div>
                     </div>
                 </div>
-                <div class="task">
-                    <div class="task-inner">
-                        <div class="task-logo-wrapper">
-                            <img src="@/assets/logo.png" class="task-logo">
-                        </div>
-                        <div class="task-desc">
-                            <div class="task-name">
-                                Mine 1000 KTC
-                            </div>
-                            <div class="task-coin-logo-wrapper">
-                                <img src="@/assets/image.png" class="task-coin-logo">
-                                <div class="task-money">+5000</div>
-                            </div>
-                        </div>
+                <div>
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-inner">
+                    <div class="task-logo-wrapper">
+                        <img src="@/assets/logo.png" class="task-logo">
                     </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span>
+                    <div class="task-desc">
+                        <div class="task-name">
+                            Mine 1000 KTC
+                        </div>
+                        <div class="task-coin-logo-wrapper">
+                            <img src="@/assets/image.png" class="task-coin-logo">
+                            <div class="task-money">+5000</div>
+                        </div>
                     </div>
                 </div>
-                <div class="task">
-                    <div class="task-inner">
-                        <div class="task-logo-wrapper">
-                            <img src="@/assets/logo.png" class="task-logo">
-                        </div>
-                        <div class="task-desc">
-                            <div class="task-name">
-                                Mine 1000 KTC
-                            </div>
-                            <div class="task-coin-logo-wrapper">
-                                <img src="@/assets/image.png" class="task-coin-logo">
-                                <div class="task-money">+5000</div>
-                            </div>
-                        </div>
+                <div>
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-inner">
+                    <div class="task-logo-wrapper">
+                        <img src="@/assets/logo.png" class="task-logo">
                     </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span>
+                    <div class="task-desc">
+                        <div class="task-name">
+                            Mine 1000 KTC
+                        </div>
+                        <div class="task-coin-logo-wrapper">
+                            <img src="@/assets/image.png" class="task-coin-logo">
+                            <div class="task-money">+5000</div>
+                        </div>
                     </div>
                 </div>
-                <div class="task">
-                    <div class="task-inner">
-                        <div class="task-logo-wrapper">
-                            <img src="@/assets/logo.png" class="task-logo">
-                        </div>
-                        <div class="task-desc">
-                            <div class="task-name">
-                                Mine 1000 KTC
-                            </div>
-                            <div class="task-coin-logo-wrapper">
-                                <img src="@/assets/image.png" class="task-coin-logo">
-                                <div class="task-money">+5000</div>
-                            </div>
-                        </div>
+                <div>
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-inner">
+                    <div class="task-logo-wrapper">
+                        <img src="@/assets/logo.png" class="task-logo">
                     </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span>
+                    <div class="task-desc">
+                        <div class="task-name">
+                            Mine 1000 KTC
+                        </div>
+                        <div class="task-coin-logo-wrapper">
+                            <img src="@/assets/image.png" class="task-coin-logo">
+                            <div class="task-money">+5000</div>
+                        </div>
                     </div>
                 </div>
-                <div class="task">
-                    <div class="task-inner">
-                        <div class="task-logo-wrapper">
-                            <img src="@/assets/logo.png" class="task-logo">
+                <div>
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
+                </div>
+            </div>
+            <div class="task">
+                <div class="task-inner">
+                    <div class="task-logo-wrapper">
+                        <img src="@/assets/logo.png" class="task-logo">
+                    </div>
+                    <div class="task-desc">
+                        <div class="task-name">
+                            Mine 1000 KTC
                         </div>
-                        <div class="task-desc">
-                            <div class="task-name">
-                                Mine 1000 KTC
-                            </div>
-                            <div class="task-coin-logo-wrapper">
-                                <img src="@/assets/image.png" class="task-coin-logo">
-                                <div class="task-money">+5000</div>
-                            </div>
+                        <div class="task-coin-logo-wrapper">
+                            <img src="@/assets/image.png" class="task-coin-logo">
+                            <div class="task-money">+5000</div>
                         </div>
                     </div>
-                    <div>
-                        <span class="material-symbols-outlined">
-                            arrow_forward_ios
-                        </span>
-                    </div>
+                </div>
+                <div>
+                    <span class="material-symbols-outlined">
+                        arrow_forward_ios
+                    </span>
                 </div>
             </div>
         </div>
     </div>
-    <nav-bar></nav-bar>
 </template>
 
-<script>
-import NavBar from '@/components/NavBar.vue';
+<script setup>
 
-export default {
-    components: {
-        NavBar
-    }
-}
 </script>
 
 <style scoped>
