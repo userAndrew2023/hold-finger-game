@@ -1,5 +1,5 @@
 <template>
-  <div id="app" :key="$route.fullPath" :style="{ 'background': $route.fullPath === '/' ? 'linear-gradient(#000, #1a1a1a, #808080)' : null }">
+  <div id="app" :key="$route.fullPath">
     <div>
       <router-view :key="$route.fullPath"></router-view>
     </div>
@@ -10,6 +10,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 html {
+  background-color: black;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,7 +22,6 @@ body {
   padding: 0;
 }
 #app {
-  background-color: black;
   font-family: 'Lexend', sans-serif;
   text-align: center;
   color: white;

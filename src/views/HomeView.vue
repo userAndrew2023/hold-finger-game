@@ -113,6 +113,7 @@ export default {
   -webkit-user-select: none;
   user-select: none;
   touch-action: none;
+  opacity: 0.95;
 }
 .hold-button {
   width: 100%;
