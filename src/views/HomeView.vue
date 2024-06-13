@@ -1,12 +1,12 @@
 <template>
+  <div>
     <div class="money">
         <img src="@/assets/image.png" class="mini-logo">
         <div>{{ money }}</div>
       </div>
       <div class="league">
         <div class="league-color" :style="{ backgroundColor: currentLevel.color }"></div>
-        <div v-if="currentLevel.name !== 'Ruby'">{{ currentLevel.name }} ― {{ nextLevelPercentage }}%</div>
-        <div v-else>{{ currentLevel.name }}</div>
+        <div>{{ currentLevel.name }}</div>
         <span class="material-symbols-outlined league-forward">
           arrow_forward_ios
         </span>
@@ -18,13 +18,15 @@
         @touchend="endHold"
       >
         <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
-      </div>
-      <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
+    </div>
+    <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
+  </div>
+  <nav-bar></nav-bar>
 </template>
 
 <script>
 import mockLevels from '@/data/mockLevels.ts'
-
+import NavBar from '@/components/NavBar.vue';
 export default {
   data() {
     return {
@@ -52,7 +54,7 @@ export default {
           this.holdTime += 0.1;
           this.holdTime = Number((this.holdTime).toFixed(1));
           if (Number.isInteger(this.holdTime)) {
-            this.money += 20;
+            this.money += 1;
             this.updateLevel();
           }
         }, 100);
@@ -98,6 +100,9 @@ export default {
   },
   mounted() {
     this.updateLevel();
+  },
+  components: {
+    NavBar
   }
 };
 </script>
