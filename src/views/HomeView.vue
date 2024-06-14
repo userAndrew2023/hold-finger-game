@@ -1,4 +1,7 @@
 <template>
+    <div class="ton-connect-wrapper">
+      <div id="ton-connect"></div>
+    </div>
     <div class="money">
         <img src="@/assets/image.png" class="mini-logo">
         <div>{{ money }}</div>
@@ -19,9 +22,6 @@
         <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
       </div>
       <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
-      <div class="ton-connect-wrapper">
-        <div id="ton-connect"></div>
-      </div>
 </template>
 
 <script>
@@ -104,6 +104,10 @@ export default {
         manifestUrl: 'https://firebasestorage.googleapis.com/v0/b/keepcoin-142a7.appspot.com/o/manifest.json?alt=media&token=07c6dcb3-0ed3-48f1-ab8e-c26495b8147c',
         buttonRootId: 'ton-connect'
     });
+    async function connectToWallet() {
+        const connectedWallet = await tonConnectUI.connectWallet();
+        console.log(connectedWallet);
+    }
     this.updateLevel();
   }
 };
@@ -143,7 +147,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 48px;
-  padding-top: 30px;
+  padding-top: 50px;
   font-weight: 700;
 }
 .leave-desktop {
@@ -172,7 +176,10 @@ export default {
   margin-left: 5px;
 }
 .ton-connect-wrapper {
-  margin-left: 15px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: 15px;
   margin-top: 15px;
 }
 .ton-logo {
