@@ -17,7 +17,8 @@
     margin-top: 20px;
     padding: 10px;
     padding-left: 30px;
-    border-radius: 10px;
+    border-radius: 7px;
+    font-size: 14px;
     padding-right: 30px;
     background-color: white;
     display: inline-block;
