@@ -13,19 +13,21 @@
 
 <style scoped>
 .navbar {
+  background-color: black;
   font-size: 14px;
   font-weight: 500;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: fixed;
-  margin-bottom: 15px;
   bottom: 0;
   left: 0;
   right: 0;
   padding: 0 10%;
 }
 .navbar-item {
+  margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
 }
 </style>
