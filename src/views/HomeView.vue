@@ -104,10 +104,6 @@ export default {
         manifestUrl: 'https://firebasestorage.googleapis.com/v0/b/keepcoin-142a7.appspot.com/o/manifest.json?alt=media&token=07c6dcb3-0ed3-48f1-ab8e-c26495b8147c',
         buttonRootId: 'ton-connect'
     });
-    async function connectToWallet() {
-        const connectedWallet = await tonConnectUI.connectWallet();
-        console.log(connectedWallet);
-    }
     this.updateLevel();
   }
 };
