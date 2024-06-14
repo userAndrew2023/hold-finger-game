@@ -172,7 +172,7 @@ export default {
   position: fixed;
   top: 0;
   right: 0;
-  margin-right: 30px;
-  margin-top: 30px;
+  margin-right: 15px;
+  margin-top: 15px;
 }
 </style>
