@@ -177,8 +177,8 @@ export default {
   margin-top: 15px;
 }
 .ton-logo {
-  width: 30px;
-  height: 30px;
+  width: 25px;
+  height: 25px;
   margin-right: 3px;
 }
 .ton-connect {
@@ -187,6 +187,7 @@ export default {
   padding: 5px;
   padding-left: 15px;
   padding-right: 20px;
+  font-size: 12px;
   display: flex;
   align-items: center
 }
