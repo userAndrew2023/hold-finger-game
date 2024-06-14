@@ -250,7 +250,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px grey solid;
+    border-bottom: 1px #4d4d4d solid;
 }
 .task-logo-wrapper {
     width: 30px;
