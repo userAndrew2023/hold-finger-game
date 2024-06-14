@@ -5,8 +5,7 @@
       </div>
       <div class="league">
         <div class="league-color" :style="{ backgroundColor: currentLevel.color }"></div>
-        <div v-if="currentLevel.name !== 'Ruby'">{{ currentLevel.name }} ― {{ nextLevelPercentage }}%</div>
-        <div v-else>{{ currentLevel.name }}</div>
+        <div>{{ currentLevel.name }}</div>
         <span class="material-symbols-outlined league-forward">
           arrow_forward_ios
         </span>
