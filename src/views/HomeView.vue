@@ -2,7 +2,7 @@
     <div class="ton-connect-wrapper">
       <div id="ton-connect" class="ton-connect">
         <img class="ton-logo" src="@/assets/ton-image.svg">
-        <div>Connect Wallet</div>
+        <div>Connect</div>
       </div>
     </div>
     <div class="money">
