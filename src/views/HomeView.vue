@@ -1,7 +1,4 @@
 <template>
-    <div class="ton-connect-wrapper">
-      <div id="ton-connect"></div>
-    </div>
     <div class="money">
         <img src="@/assets/image.png" class="mini-logo">
         <div>{{ money }}</div>
@@ -22,6 +19,9 @@
         <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
       </div>
       <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
+      <div class="ton-connect-wrapper">
+        <div id="ton-connect"></div>
+      </div>
 </template>
 
 <script>
@@ -176,10 +176,7 @@ export default {
   margin-left: 5px;
 }
 .ton-connect-wrapper {
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin-right: 15px;
+  margin-left: 15px;
   margin-top: 15px;
 }
 .ton-logo {
