@@ -15,6 +15,7 @@ export default {
     },
     methods: {
         showToast() {
+            navigator.clipboard.writeText('text');
             this.$refs.toastNotification.showToast('Link copied to clipboard!');
         }
     }
