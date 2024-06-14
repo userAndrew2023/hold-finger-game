@@ -38,15 +38,9 @@ export default {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 100px;
+  bottom: 90px;
   color: #fff;
   padding: 10px 20px;
-  margin-left: 500px;
-  margin-right: 500px;
-  border-radius: 5px;
-  display: inline-block;
-  transition: transform 0.5s ease, color 0.5s ease;
-  transform: translateY(0);
 }
 
 .toast.show {
