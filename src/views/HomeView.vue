@@ -1,6 +1,9 @@
 <template>
-    <div class="ton-connect">
-      <img class="ton-logo" src="@/assets/ton-image.svg">
+    <div class="ton-connect-wrapper">
+      <div id="ton-connect" class="ton-connect">
+        <img class="ton-logo" src="@/assets/ton-image.svg">
+        <div>Connect Wallet</div>
+      </div>
     </div>
     <div class="money">
         <img src="@/assets/image.png" class="mini-logo">
@@ -166,13 +169,25 @@ export default {
 .league-forward {
   margin-left: 5px;
 }
-.ton-logo {
-  width: 50px;
-  height: 50px;
+.ton-connect-wrapper {
   position: fixed;
   top: 0;
   right: 0;
   margin-right: 15px;
   margin-top: 15px;
+}
+.ton-logo {
+  width: 30px;
+  height: 30px;
+  margin-right: 3px;
+}
+.ton-connect {
+  background-color: #248BDA;
+  border-radius: 50px;
+  padding: 5px;
+  padding-left: 15px;
+  padding-right: 20px;
+  display: flex;
+  align-items: center
 }
 </style>
