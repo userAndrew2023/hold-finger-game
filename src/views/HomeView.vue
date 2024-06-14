@@ -1,9 +1,6 @@
 <template>
     <div class="ton-connect-wrapper">
-      <div id="ton-connect" class="ton-connect">
-        <img class="ton-logo" src="@/assets/ton-image.svg">
-        <div>Connect</div>
-      </div>
+      <div id="ton-connect"></div>
     </div>
     <div class="money">
         <img src="@/assets/image.png" class="mini-logo">
@@ -28,7 +25,8 @@
 </template>
 
 <script>
-import mockLevels from '@/data/mockLevels.ts'
+import mockLevels from '@/data/mockLevels.ts';
+import { TonConnectUI } from '@tonconnect/ui';
 
 export default {
   data() {
@@ -102,6 +100,14 @@ export default {
     }
   },
   mounted() {
+    const tonConnectUI = new TonConnectUI({
+        manifestUrl: 'https://<YOUR_APP_URL>/tonconnect-manifest.json',
+        buttonRootId: 'ton-connect'
+    });
+    async function connectToWallet() {
+        const connectedWallet = await tonConnectUI.connectWallet();
+        console.log(connectedWallet);
+    }
     this.updateLevel();
   }
 };
