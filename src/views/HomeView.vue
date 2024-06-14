@@ -172,8 +172,8 @@ export default {
 .ton-connect-wrapper {
   position: fixed;
   top: 0;
-  right: 0;
-  margin-right: 15px;
+  left: 0;
+  margin-left: 15px;
   margin-top: 15px;
 }
 .ton-logo {
