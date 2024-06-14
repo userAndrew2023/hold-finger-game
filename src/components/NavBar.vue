@@ -18,7 +18,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  position: fixed;
+  position: absolute;
   margin-bottom: 15px;
   bottom: 0;
   left: 0;
