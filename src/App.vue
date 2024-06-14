@@ -10,7 +10,7 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 html {
-  background-color: black;
+  background-color: #0a0a0a;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
