@@ -1,6 +1,11 @@
 <template>
   <div v-if="visible" class="toast">
-    {{ message }}
+    <span class="material-symbols-outlined" style="margin-right: 5px;">
+      info
+    </span>
+    <div>
+      {{ message }}
+    </div>
   </div>
 </template>
 
@@ -35,6 +40,9 @@ export default {
 
 <style scoped>
 .toast {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: fixed;
   left: 0;
   right: 0;
