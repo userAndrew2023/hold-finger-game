@@ -1,11 +1,24 @@
 <template>
     <div>
         <div class="invite-label">40% from each fren</div>
-        <div class="copy-link">Copy Link</div>
+        <div class="copy-link" @click="showToast()">Copy Link</div>
+        <ToastNotification ref="toastNotification"/>
     </div>
 </template>
 
 <script>
+import ToastNotification from "@/components/ToastNotification.vue";
+
+export default {
+    components: {
+        ToastNotification
+    },
+    methods: {
+        showToast() {
+            this.$refs.toastNotification.showToast('Link copied to clipboard!');
+        }
+    }
+};
 </script>
 
 <style scoped>
