@@ -13,7 +13,7 @@
 
 <style scoped>
 .navbar {
-  background-color: #0a0a0a;
+  background-color: #151719;
   font-size: 14px;
   font-weight: 500;
   display: flex;
