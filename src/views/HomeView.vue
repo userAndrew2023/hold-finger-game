@@ -1,4 +1,7 @@
 <template>
+    <div class="ton-connect">
+      <img class="ton-logo" src="@/assets/ton-image.svg">
+    </div>
     <div class="money">
         <img src="@/assets/image.png" class="mini-logo">
         <div>{{ money }}</div>
@@ -51,7 +54,7 @@ export default {
           this.holdTime += 0.1;
           this.holdTime = Number((this.holdTime).toFixed(1));
           if (Number.isInteger(this.holdTime)) {
-            this.money += 20;
+            this.money += 1;
             this.updateLevel();
           }
         }, 100);
@@ -162,5 +165,14 @@ export default {
 }
 .league-forward {
   margin-left: 5px;
+}
+.ton-logo {
+  width: 50px;
+  height: 50px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  margin-right: 30px;
+  margin-top: 30px;
 }
 </style>
