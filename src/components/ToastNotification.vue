@@ -1,5 +1,5 @@
 <template>
-  <div v-if="visible" class="toast" :class="{ show: visible }">
+  <div v-if="visible" class="toast">
     {{ message }}
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
     const message = ref('');
     let timeout = null;
 
-    const showToast = (msg, duration = 1200) => {
+    const showToast = (msg, duration = 1000) => {
       console.log("Showing toast with message:", msg);
       message.value = msg;
       visible.value = true;
@@ -45,6 +45,8 @@ export default {
   margin-right: 500px;
   border-radius: 5px;
   display: inline-block;
+  transition: transform 0.5s ease, color 0.5s ease;
+  transform: translateY(0);
 }
 
 .toast.show {
