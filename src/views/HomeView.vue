@@ -1,7 +1,4 @@
 <template>
-    <div class="ton-connect-wrapper">
-      <div id="ton-connect"></div>
-    </div>
     <div class="money">
         <img src="@/assets/image.png" class="mini-logo">
         <div>{{ money }}</div>
@@ -25,8 +22,7 @@
 </template>
 
 <script>
-import mockLevels from '@/data/mockLevels.ts';
-import { TonConnectUI } from '@tonconnect/ui';
+import mockLevels from '@/data/mockLevels.ts'
 
 export default {
   data() {
@@ -100,14 +96,6 @@ export default {
     }
   },
   mounted() {
-    const tonConnectUI = new TonConnectUI({
-        manifestUrl: 'https://firebasestorage.googleapis.com/v0/b/keepcoin-142a7.appspot.com/o/manifest.json?alt=media&token=07c6dcb3-0ed3-48f1-ab8e-c26495b8147c',
-        buttonRootId: 'ton-connect'
-    });
-    async function connectToWallet() {
-        const connectedWallet = await tonConnectUI.connectWallet();
-        console.log(connectedWallet);
-    }
     this.updateLevel();
   }
 };
@@ -147,7 +135,7 @@ export default {
   align-items: center;
   justify-content: center;
   font-size: 48px;
-  padding-top: 50px;
+  padding-top: 30px;
   font-weight: 700;
 }
 .leave-desktop {
@@ -174,27 +162,5 @@ export default {
 }
 .league-forward {
   margin-left: 5px;
-}
-.ton-connect-wrapper {
-  position: fixed;
-  top: 0;
-  right: 0;
-  margin-left: 15px;
-  margin-top: 15px;
-}
-.ton-logo {
-  width: 25px;
-  height: 25px;
-  margin-right: 3px;
-}
-.ton-connect {
-  background-color: #248BDA;
-  border-radius: 50px;
-  padding: 5px;
-  padding-left: 15px;
-  padding-right: 20px;
-  font-size: 12px;
-  display: flex;
-  align-items: center
 }
 </style>
