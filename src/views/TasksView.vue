@@ -242,7 +242,6 @@
 
 <style scoped>
 .tasks_group {
-    background-color: #333333;
     margin: 20px;
     border-radius: 15px;
 }
@@ -255,7 +254,6 @@
 .task-logo-wrapper {
     width: 70px;
     height: 70px;
-    background-color: #4d4d4d;
     border-radius: 15px;
     display: flex;
     align-items: center;
@@ -276,7 +274,6 @@
 }
 .task-name {
     text-align: left;
-    color: #b3b3b3;
 }
 .task-coin-logo-wrapper {
     text-align: left;
