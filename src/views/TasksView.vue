@@ -250,18 +250,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: 1px grey solid;
 }
 .task-logo-wrapper {
-    width: 70px;
-    height: 70px;
+    width: 30px;
+    height: 30px;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 .task-logo {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
 }
 .task-inner {
     display: flex;
