@@ -194,6 +194,7 @@ export default {
 }
 .frens-list {
     margin-top: 20px;
+    padding-bottom: 15px;
 }
 .fren-image-wrapper {
     margin-right: 10px;
