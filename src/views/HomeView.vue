@@ -127,7 +127,7 @@ export default {
 }
 @media (min-width: 768px) {
   .hold-area {
-    width: 300px;
+    width: 200px;
   }
 }
 .money {
