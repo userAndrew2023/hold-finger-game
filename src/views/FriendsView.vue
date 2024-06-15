@@ -158,7 +158,7 @@ export default {
 
 <style scoped>
 .fren-item {
-    margin-top: 20px;
+    margin-top: 10px;
 }
 .invite-label {
     padding-top: 20px;
@@ -213,7 +213,7 @@ export default {
 }
 .fren-name-wrapper {
     text-align: left;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 .fren-earn {
     display: flex;
