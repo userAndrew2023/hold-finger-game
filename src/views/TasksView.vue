@@ -247,7 +247,7 @@
     border-radius: 15px;
 }
 .task {
-    padding: 15px;
+    padding: 10px;
     display: flex;
     justify-content: space-between;
     align-items: center;
