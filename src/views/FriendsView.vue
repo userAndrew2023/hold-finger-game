@@ -157,6 +157,9 @@ export default {
 </script>
 
 <style scoped>
+.fren-item {
+    margin-top: 20px;
+}
 .invite-label {
     padding-top: 20px;
     font-size: 24px;
