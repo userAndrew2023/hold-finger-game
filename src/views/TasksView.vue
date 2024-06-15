@@ -243,6 +243,7 @@
 <style scoped>
 .tasks_group {
     margin: 20px;
+    margin-top: 0;
     border-radius: 15px;
 }
 .task {
