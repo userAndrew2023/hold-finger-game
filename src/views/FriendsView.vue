@@ -147,7 +147,7 @@ export default {
     },
     methods: {
         sendLink() {
-            window.location.href = `https://t.me/share/url?url=https://t.me/keepcoin_bot/start?ref_id=${window.Telegram.WebApp.initDataUnsafe.user.id}`;
+            window.location.href = `https://t.me/share/url?url=https://t.me/keepcoin_bot/start?startapp=${window.Telegram.WebApp.initDataUnsafe.user.id}`;
         },
         forwardToFren() {
             window.location.href = 'https://t.me/V_Zelenskiy_official/5182';
