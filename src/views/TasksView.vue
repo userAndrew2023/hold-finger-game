@@ -254,16 +254,17 @@
     border-bottom: 1px #4d4d4d solid;
 }
 .task-logo-wrapper {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
     border-radius: 15px;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-right: 5px;
 }
 .task-logo {
-    width: 30px;
-    height: 30px;
+    width: 25px;
+    height: 25px;
 }
 .task-inner {
     display: flex;
