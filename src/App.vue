@@ -33,7 +33,6 @@ body {
 </style>
 
 <script>
-import mockLevels from './data/mockLevels.ts'
 import NavBar from '@/components/NavBar.vue'
 
 export default {
