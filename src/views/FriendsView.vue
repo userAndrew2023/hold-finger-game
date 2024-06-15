@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="invite-label">40% from each fren</div>
-        <div class="copy-link" @click="sendLink()">Send Link</div>
+        <div class="copy-link" @click="sendLink()">Invite a fren (+1000)</div>
         <div class="hr"></div>
         <ToastNotification ref="toastNotification"/>
     </div>
@@ -28,14 +28,15 @@ export default {
     font-size: 24px;
 }
 .copy-link {
-    margin-top: 20px;
+    margin-top: 30px;
     padding: 10px;
     padding-left: 30px;
     border-radius: 7px;
     font-size: 14px;
     padding-right: 30px;
     background-color: white;
-    display: inline-block;
+    margin-right: 20px;
+    margin-left: 20px;
     color: black
 }
 .hr {
