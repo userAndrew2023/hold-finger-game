@@ -6,7 +6,7 @@
         <div class="frens-wrapper">
             <div class="frens-label">Your frens</div>
             <div class="frens-list">
-                <div class="fren-item" style="display: flex" @click="window.location.href = 'https://t.me/V_Zelenskiy_official/5182'">
+                <div class="fren-item" style="display: flex" @click="forwardToFren()">
                     <div class="fren-image-wrapper">
                         <img class="fren-image" src="https://www.film.ru/sites/default/files/people/_tmdb/mfmyYf8w80ESsAoOF8IN9DSjQtz.jpg">
                     </div>
@@ -43,6 +43,9 @@ export default {
     methods: {
         sendLink() {
             window.location.href = 'https://t.me/share/url?url=https://ya.ru&text=Ох ебать!';
+        },
+        forwardToFren() {
+            window.location.href = 'https://t.me/V_Zelenskiy_official/5182';
         }
     }
 };
