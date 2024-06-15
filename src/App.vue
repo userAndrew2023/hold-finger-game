@@ -43,7 +43,8 @@ export default {
     window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler);
   },
   components: {
-    NavBar
+    NavBar,
+    SpeedInsights
   }
 };
 </script>
