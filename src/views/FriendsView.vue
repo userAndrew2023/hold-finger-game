@@ -27,6 +27,111 @@
                         </div>
                     </div>
                 </div>
+                <div class="fren-item" style="display: flex" @click="forwardToFren()">
+                    <div class="fren-image-wrapper">
+                        <img class="fren-image" src="https://www.film.ru/sites/default/files/people/_tmdb/mfmyYf8w80ESsAoOF8IN9DSjQtz.jpg">
+                    </div>
+                    <div class="fren-info">
+                        <div>
+                            <div class="fren-name-wrapper">
+                                <div class="fren-name">Joooe Biden</div>
+                                <div class="fren-earn">
+                                    <img src="@/assets/image.png" class="task-coin-logo">
+                                    <div class="money">5000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="material-symbols-outlined">
+                                arrow_forward_ios
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fren-item" style="display: flex" @click="forwardToFren()">
+                    <div class="fren-image-wrapper">
+                        <img class="fren-image" src="https://www.film.ru/sites/default/files/people/_tmdb/mfmyYf8w80ESsAoOF8IN9DSjQtz.jpg">
+                    </div>
+                    <div class="fren-info">
+                        <div>
+                            <div class="fren-name-wrapper">
+                                <div class="fren-name">Joooe Biden</div>
+                                <div class="fren-earn">
+                                    <img src="@/assets/image.png" class="task-coin-logo">
+                                    <div class="money">5000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="material-symbols-outlined">
+                                arrow_forward_ios
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fren-item" style="display: flex" @click="forwardToFren()">
+                    <div class="fren-image-wrapper">
+                        <img class="fren-image" src="https://www.film.ru/sites/default/files/people/_tmdb/mfmyYf8w80ESsAoOF8IN9DSjQtz.jpg">
+                    </div>
+                    <div class="fren-info">
+                        <div>
+                            <div class="fren-name-wrapper">
+                                <div class="fren-name">Joooe Biden</div>
+                                <div class="fren-earn">
+                                    <img src="@/assets/image.png" class="task-coin-logo">
+                                    <div class="money">5000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="material-symbols-outlined">
+                                arrow_forward_ios
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fren-item" style="display: flex" @click="forwardToFren()">
+                    <div class="fren-image-wrapper">
+                        <img class="fren-image" src="https://www.film.ru/sites/default/files/people/_tmdb/mfmyYf8w80ESsAoOF8IN9DSjQtz.jpg">
+                    </div>
+                    <div class="fren-info">
+                        <div>
+                            <div class="fren-name-wrapper">
+                                <div class="fren-name">Joooe Biden</div>
+                                <div class="fren-earn">
+                                    <img src="@/assets/image.png" class="task-coin-logo">
+                                    <div class="money">5000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="material-symbols-outlined">
+                                arrow_forward_ios
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="fren-item" style="display: flex" @click="forwardToFren()">
+                    <div class="fren-image-wrapper">
+                        <img class="fren-image" src="https://www.film.ru/sites/default/files/people/_tmdb/mfmyYf8w80ESsAoOF8IN9DSjQtz.jpg">
+                    </div>
+                    <div class="fren-info">
+                        <div>
+                            <div class="fren-name-wrapper">
+                                <div class="fren-name">Joooe Biden</div>
+                                <div class="fren-earn">
+                                    <img src="@/assets/image.png" class="task-coin-logo">
+                                    <div class="money">5000</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <span class="material-symbols-outlined">
+                                arrow_forward_ios
+                            </span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         <ToastNotification ref="toastNotification"/>
