@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="invite-label">40% from each fren</div>
-        <div class="copy-link" @click="showToast()">Copy Link</div>
+        <div class="copy-link" @click="sendLink()">Send Link</div>
         <ToastNotification ref="toastNotification"/>
     </div>
 </template>
@@ -14,9 +14,8 @@ export default {
         ToastNotification
     },
     methods: {
-        showToast() {
-            navigator.clipboard.writeText('text');
-            this.$refs.toastNotification.showToast('Link copied to clipboard!');
+        sendLink() {
+            window.location.href = 'https://t.me/share/url?url=https://ya.ru&text=Ох ебать!';
         }
     }
 };
