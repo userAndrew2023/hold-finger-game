@@ -5,6 +5,7 @@
     </div>
     <nav-bar></nav-bar>
   </div>
+  <SpeedInsights/>
 </template>
 
 <style>
@@ -33,7 +34,8 @@ body {
 </style>
 
 <script>
-import NavBar from '@/components/NavBar.vue'
+import NavBar from '@/components/NavBar.vue';
+import { SpeedInsights } from "@vercel/speed-insights/vue";
 
 export default {
   mounted() {
