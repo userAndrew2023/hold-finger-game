@@ -1,102 +1,131 @@
 <template>
-    <div class="money">
-        <img src="@/assets/image.png" class="mini-logo">
-        <div>{{ money }}</div>
-      </div>
-      <div class="league">
-        <div class="league-color" :style="{ backgroundColor: currentLevel.color }"></div>
-        <div>{{ currentLevel.name }}</div>
-        <span class="material-symbols-outlined league-forward">
-          arrow_forward_ios
-        </span>
-      </div>
-      <h2 class="tip">Hold Your Finger</h2>
-      <div
-        class="hold-area"
-        @touchstart="startHold"
-        @touchend="endHold"
-      >
-        <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': this.holding }">
-      </div>
-      <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
+  <div class="money">
+    <img src="@/assets/image.png" class="mini-logo">  
+    <div>{{ money }}</div>
+  </div>
+  <h2 class="tip">Hold Your Finger</h2>
+  <div
+    class="hold-area"
+    @touchstart="startHold"
+    @touchend="endHold"
+  >
+    <img src="@/assets/image.png" :class="{ 'hold-button': true, 'hold-button-active': holding }">
+  </div>
+  <p>Time: {{ formatSeconds(holdTime) }} seconds</p>
 </template>
 
-<script>
-import mockLevels from '@/data/mockLevels.ts'
+<script lang="ts">
+import { ref, onMounted } from 'vue';
+import mockLevels from '@/data/mockLevels';
+import { TelegramUser } from "../models/TelegramUser";
+import telegramUserService from "../services/TelegramUserService";
 
 export default {
-  data() {
-    return {
-      holdTime: 0,
-      money: 0,
-      holding: false,
-      intervalId: null,
-      currentLevel: { name: '', color: '#000000', coins_from: 0 },
-      nextLevelPercentage: 0
-    };
-  },
-  methods: {
-    startHold() {
-      if (!this.holding) {
+  setup() {
+    const holdTime = ref(0);
+    const money = ref(0);
+    const holding = ref(false);
+    let intervalId: number | null = null;
+    const currentLevel = ref({ name: '', color: '#000000', coins_from: 0 });
+    const nextLevelPercentage = ref(0);
+    const currentUser = ref<TelegramUser>(null);
+
+    const startHold = (event: TouchEvent) => {
+      if (!holding.value) {
         event.preventDefault();
-        this.holding = true;
-        this.holdTime = 0;
-        let oldHeight = window.Telegram.WebApp.viewportHeight;
-        this.intervalId = setInterval(() => {
-          if (oldHeight != window.Telegram.WebApp.viewportHeight) {
-            this.endHold();
+        holding.value = true;
+        holdTime.value = 0;
+        let oldHeight = (window as any).Telegram.WebApp.viewportHeight;
+        intervalId = window.setInterval(() => {
+          if (oldHeight != (window as any).Telegram.WebApp.viewportHeight) {
+            endHold();
             return;
           }
-          oldHeight = window.Telegram.WebApp.viewportHeight;
-          this.holdTime += 0.1;
-          this.holdTime = Number((this.holdTime).toFixed(1));
-          if (Number.isInteger(this.holdTime)) {
-            this.money += 1;
-            this.updateLevel();
+          oldHeight = (window as any).Telegram.WebApp.viewportHeight;
+          holdTime.value += 0.1;
+          holdTime.value = Number(holdTime.value.toFixed(1));
+          if (Number.isInteger(holdTime.value)) {
+            money.value += 10;
+            updateLevel();
           }
         }, 100);
       }
-    },
-    endHold() {
-      if (this.holding) {
-        this.holding = false;
-        clearInterval(this.intervalId);
+    };
+
+    const endHold = () => {
+      if (holding.value) {
+        holding.value = false;
+        if (intervalId) {
+          clearInterval(intervalId);
+          intervalId = null;
+        }
+        telegramUserService.updateUser(currentUser.value)
+        .then(updatedUser => {
+          currentUser.value = updatedUser;
+        });
       }
-    },
-    formatSeconds(number) {
+    };
+
+    const formatSeconds = (number: number): string => {
       return number.toString().includes(".") ? number.toString() : number.toString() + ".0";
-    },
-    isMobile() {
-      return true;
-    },
-    printAgent() {
-      return navigator.userAgent;
-    },
-    testhandler(object) {
-      if (!window.Telegram.WebApp.isExpanded) {
-        this.endHold();
-        window.Telegram.WebApp.expand();
-      }
-    },
-    getLevel() {
+    };
+
+    const getLevel = () => {
       for (let i = mockLevels.length - 1; i >= 0; i--) {
-        if (this.money >= mockLevels[i].coins_from) {
+        if (money.value >= mockLevels[i].coins_from) {
           return mockLevels[i];
         }
       }
       return { name: 'Bronze', color: '#cd7f32', coins_from: 1 };
-    },
-    updateLevel() {
-      this.currentLevel = this.getLevel();
-      const nextLevel = mockLevels.find(level => level.coins_from > this.money) || this.currentLevel;
+    };
+
+    const updateLevel = () => {
+      currentLevel.value = getLevel();
+      const nextLevel = mockLevels.find(level => level.coins_from > money.value) || currentLevel.value;
       const previousLevel = mockLevels[mockLevels.indexOf(nextLevel) - 1] || { coins_from: 0 };
-      const progressInCurrentLevel = this.money - previousLevel.coins_from;
+      const progressInCurrentLevel = money.value - previousLevel.coins_from;
       const levelRange = nextLevel.coins_from - previousLevel.coins_from;
-      this.nextLevelPercentage = Math.min((progressInCurrentLevel / levelRange) * 100, 100).toFixed(0);
+      nextLevelPercentage.value = Math.min((progressInCurrentLevel / levelRange) * 100, 100).toFixed(0);
+    };
+
+    const fetchUser = async () => {
+      const { id, username } = window.Telegram.WebApp.initDataUnsafe.user;
+      await telegramUserService.getUserByTelegramId(id).then(user => {
+        if (!user) {
+          const newUser: TelegramUser = {
+            id: null,
+            created_at: null,
+            updated_at: null,
+            balance: 0,
+            telegram_id: id,
+            telegram_username: username,
+            referral_id: null
+          };
+          telegramUserService.createUser(newUser)
+          .then(createdUser => {
+            currentUser.value = createdUser;
+          });
+        } else {
+          currentUser.value = user;
+        }
+      });
     }
-  },
-  mounted() {
-    this.updateLevel();
+
+    onMounted(async () => {
+      await fetchUser();
+      updateLevel();
+    });
+
+    return {
+      holdTime,
+      money,
+      holding,
+      currentLevel,
+      nextLevelPercentage,
+      startHold,
+      endHold,
+      formatSeconds
+    };
   }
 };
 </script>
