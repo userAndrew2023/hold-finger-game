@@ -1,3 +1,5 @@
 <template>
-    <h1 style="margin-top: 100px">Soon 🚀</h1>
+    <div style="padding-top: 100px">
+        <h1>Soon 🚀</h1>
+    </div>
 </template>
