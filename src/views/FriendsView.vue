@@ -55,7 +55,7 @@
       ]);
   
       const sendLink = () => {
-        const userId = window.Telegram.WebApp.initDataUnsafe.user.id;
+        const userId = (window as any).WebApp.initDataUnsafe.user.id;
         window.location.href = `https://t.me/share/url?url=https://t.me/keepcoin_bot/start?startapp=${userId}`;
       };
   

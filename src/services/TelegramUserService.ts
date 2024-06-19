@@ -18,7 +18,7 @@ const telegramUserService =  {
     const response = await apiClient.post<TelegramUser>('/telegram-users', user);
     return response.data;
   },
-  async updateUser(user: TelegramUser): Promise<TelegramUser> {
+  async updateUser(user: any): Promise<TelegramUser> {
     const response = await apiClient.put<TelegramUser>(`/telegram-users/${user.id}`, user);
     return response.data;
   }

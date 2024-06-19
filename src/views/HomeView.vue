@@ -27,8 +27,8 @@ export default {
     const holding = ref(false);
     let intervalId: number | null = null;
     const currentLevel = ref({ name: '', color: '#000000', coins_from: 0 });
-    const nextLevelPercentage = ref(0);
-    const currentUser = ref<TelegramUser>(null);
+    const nextLevelPercentage = ref("");
+    const currentUser = ref<TelegramUser | null>(null);
 
     const startHold = (event: TouchEvent) => {
       if (!holding.value) {
@@ -89,7 +89,7 @@ export default {
     };
 
     const fetchUser = async () => {
-      const { id, username } = window.Telegram.WebApp.initDataUnsafe.user;
+      const { id, username } = (window as any).Telegram.WebApp.initDataUnsafe.user;
       await telegramUserService.getUserByTelegramId(id).then(user => {
         if (!user) {
           const newUser: TelegramUser = {
