@@ -109,10 +109,6 @@ export default {
     }
 
     onMounted(async () => {
-      (window as any).Telegram.WebApp.initDataUnsafe.user = {
-        id: "5011732483",
-        username: "aircradmin"
-      }
       await fetchUser();
     });
 
