@@ -32,8 +32,8 @@ export default {
       created_at: null,
       updated_at: null,
       balance: 0,
-      telegram_id: (window as any).Telegram.WebApp.initDataUnsafe.user.id,
-      telegram_username: (window as any).Telegram.WebApp.initDataUnsafe.user.username,
+      telegram_id: "",
+      telegram_username: "",
       referral_id: null      
     });
 
@@ -86,15 +86,16 @@ export default {
     };
 
     const fetchUser = async () => {
-      await telegramUserService.getUserByTelegramId((window as any).Telegram.WebApp.initDataUnsafe.user.id).then(user => {
+      const { id, username } = (window as any).Telegram.WebApp.initDataUnsafe.user;
+      await telegramUserService.getUserByTelegramId(id).then(user => {
         if (!user) {
           const newUser: TelegramUser = {
             id: null,
             created_at: null,
             updated_at: null,
             balance: 0,
-            telegram_id: (window as any).Telegram.WebApp.initDataUnsafe.user.id,
-            telegram_username: (window as any).Telegram.WebApp.initDataUnsafe.user.username,
+            telegram_id: id,
+            telegram_username: username,
             referral_id: null
           };
           telegramUserService.createUser(newUser)
