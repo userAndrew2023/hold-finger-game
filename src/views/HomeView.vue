@@ -2,7 +2,6 @@
   <div class="money">
     <img src="@/assets/image.png" class="mini-logo">  
     <div>{{ currentUser.balance }}</div>
-    <div>{{currentUser}}</div>
   </div>
   <h2 class="tip">Hold Your Finger</h2>
   <div
@@ -33,8 +32,8 @@ export default {
       created_at: null,
       updated_at: null,
       balance: 0,
-      telegram_id: "5011732483",
-      telegram_username: "aircradmin",
+      telegram_id: "",
+      telegram_username: "",
       referral_id: null      
     });
 
