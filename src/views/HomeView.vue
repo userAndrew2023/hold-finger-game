@@ -2,6 +2,7 @@
   <div class="money">
     <img src="@/assets/image.png" class="mini-logo">  
     <div>{{ currentUser.balance }}</div>
+    {{ currentUser.telegram_id }}
   </div>
   <h2 class="tip">Hold Your Finger</h2>
   <div
@@ -33,7 +34,7 @@ export default {
       updated_at: null,
       balance: 0,
       telegram_id: (window as any).Telegram.WebApp.initDataUnsafe.user.id,
-      telegram_username: (window as any).Telegram.WebApp.initDataUnsafe.user.name,
+      telegram_username: (window as any).Telegram.WebApp.initDataUnsafe.user.username,
       referral_id: null      
     });
 
