@@ -1,7 +1,7 @@
 <template>
   <div class="money">
     <img src="@/assets/image.png" class="mini-logo">  
-    <div>{{ money }}</div>
+    <div>{{ currentUser.balance }}</div>
   </div>
   <h2 class="tip">Hold Your Finger</h2>
   <div
@@ -23,12 +23,19 @@ import telegramUserService from "../services/TelegramUserService";
 export default {
   setup() {
     const holdTime = ref(0);
-    const money = ref(0);
     const holding = ref(false);
     let intervalId: number | null = null;
     const currentLevel = ref({ name: '', color: '#000000', coins_from: 0 });
     const nextLevelPercentage = ref("");
-    const currentUser = ref<TelegramUser | null>(null);
+    const currentUser = ref<TelegramUser>({
+      id: null,
+      created_at: null,
+      updated_at: null,
+      balance: 0,
+      telegram_id: "",
+      telegram_username: "",
+      referral_id: null      
+    });
 
     const startHold = (event: TouchEvent) => {
       if (!holding.value) {
@@ -45,8 +52,7 @@ export default {
           holdTime.value += 0.1;
           holdTime.value = Number(holdTime.value.toFixed(1));
           if (Number.isInteger(holdTime.value)) {
-            money.value += 10;
-            updateLevel();
+            currentUser.value.balance += 10;
           }
         }, 100);
       }
@@ -72,20 +78,11 @@ export default {
 
     const getLevel = () => {
       for (let i = mockLevels.length - 1; i >= 0; i--) {
-        if (money.value >= mockLevels[i].coins_from) {
+        if (currentUser.value.balance >= mockLevels[i].coins_from) {
           return mockLevels[i];
         }
       }
       return { name: 'Bronze', color: '#cd7f32', coins_from: 1 };
-    };
-
-    const updateLevel = () => {
-      currentLevel.value = getLevel();
-      const nextLevel = mockLevels.find(level => level.coins_from > money.value) || currentLevel.value;
-      const previousLevel = mockLevels[mockLevels.indexOf(nextLevel) - 1] || { coins_from: 0 };
-      const progressInCurrentLevel = money.value - previousLevel.coins_from;
-      const levelRange = nextLevel.coins_from - previousLevel.coins_from;
-      nextLevelPercentage.value = Math.min((progressInCurrentLevel / levelRange) * 100, 100).toFixed(0);
     };
 
     const fetchUser = async () => {
@@ -113,18 +110,17 @@ export default {
 
     onMounted(async () => {
       await fetchUser();
-      updateLevel();
     });
 
     return {
       holdTime,
-      money,
       holding,
       currentLevel,
       nextLevelPercentage,
       startHold,
       endHold,
-      formatSeconds
+      formatSeconds,
+      currentUser,
     };
   }
 };
