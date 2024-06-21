@@ -32,8 +32,8 @@ export default {
       created_at: null,
       updated_at: null,
       balance: 0,
-      telegram_id: "",
-      telegram_username: "",
+      telegram_id: (window as any).Telegram.WebApp.initDataUnsafe.user.id,
+      telegram_username: (window as any).Telegram.WebApp.initDataUnsafe.user.name,
       referral_id: null      
     });
 
