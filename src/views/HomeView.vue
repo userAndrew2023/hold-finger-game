@@ -33,8 +33,8 @@ export default {
       created_at: null,
       updated_at: null,
       balance: 0,
-      telegram_id: "",
-      telegram_username: "",
+      telegram_id: "5011732483",
+      telegram_username: "aircradmin",
       referral_id: null      
     });
 
