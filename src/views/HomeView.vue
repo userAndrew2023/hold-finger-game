@@ -86,16 +86,15 @@ export default {
     };
 
     const fetchUser = async () => {
-      const { id, username } = (window as any).Telegram.WebApp.initDataUnsafe.user;
-      await telegramUserService.getUserByTelegramId(id).then(user => {
+      await telegramUserService.getUserByTelegramId((window as any).Telegram.WebApp.initDataUnsafe.user.id).then(user => {
         if (!user) {
           const newUser: TelegramUser = {
             id: null,
             created_at: null,
             updated_at: null,
             balance: 0,
-            telegram_id: id,
-            telegram_username: username,
+            telegram_id: (window as any).Telegram.WebApp.initDataUnsafe.user.id,
+            telegram_username: (window as any).Telegram.WebApp.initDataUnsafe.user.username,
             referral_id: null
           };
           telegramUserService.createUser(newUser)
