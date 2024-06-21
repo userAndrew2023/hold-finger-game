@@ -12,7 +12,6 @@ const telegramUserService =  {
   },
   async getUserByTelegramId(telegramId: string): Promise<TelegramUser> {
     const response = await apiClient.get<TelegramUser>(`/telegram-users/${telegramId}?type=telegram`);
-    alert(response.data)
     return response.data;
   },
   async createUser(user: TelegramUser): Promise<TelegramUser> {
