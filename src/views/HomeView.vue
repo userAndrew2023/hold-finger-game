@@ -2,7 +2,6 @@
   <div class="money">
     <img src="@/assets/image.png" class="mini-logo">  
     <div>{{ currentUser.balance }}</div>
-    {{ currentUser.telegram_id }}
   </div>
   <h2 class="tip">Hold Your Finger</h2>
   <div
