@@ -10,7 +10,7 @@ const telegramUserService =  {
     const response = await apiClient.get<TelegramUser>(`/telegram-users/${userId}`);
     return response.data;
   },
-  async getUserByTelegramId(telegramId: number): Promise<TelegramUser> {
+  async getUserByTelegramId(telegramId: string): Promise<TelegramUser> {
     const response = await apiClient.get<TelegramUser>(`/telegram-users/${telegramId}?type=telegram`);
     return response.data;
   },
