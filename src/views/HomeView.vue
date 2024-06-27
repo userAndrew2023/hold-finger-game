@@ -3,7 +3,7 @@
     <img src="@/assets/image.png" class="mini-logo">  
     <div>{{ currentUser.balance }}</div>
   </div>
-  <h2 class="tip">Just keep your finger. For now</h2>
+  <h2 class="tip">Keep your finger</h2>
   <div
     class="hold-area"
     @touchstart="startHold"
