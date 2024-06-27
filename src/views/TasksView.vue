@@ -1,4 +1,4 @@
-<!-- <template>
+<template>
     <div class="tasks_wrapper">
         <div class="tasks_group">
             <div v-for="task in tasks" :key="task.id" class="task">
@@ -19,12 +19,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</template> -->
-
-<template>
-    <div style="padding-top: 100px">
-        <h1>Soon 🚀</h1>
     </div>
 </template>
 
