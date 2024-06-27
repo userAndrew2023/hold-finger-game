@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-  baseURL: 'localhost:8000/api/',
+  baseURL: 'https://keep-coin.ru/api/',
   headers: {
     'Content-Type': 'application/json',
   },
