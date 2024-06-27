@@ -1,5 +1,5 @@
 <template>
-    <div class="tasks_wrapper" v-if="true">
+    <div class="tasks_wrapper" v-if="false">
         <div class="tasks_group">
             <div v-for="task in tasks" :key="task.id" class="task">
                 <div class="task-inner">

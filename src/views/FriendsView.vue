@@ -1,5 +1,5 @@
 <template>
-    <div v-if="true">
+    <div v-if="false">
       <div class="invite-label">40% from each fren!</div>
       <div class="copy-link" @click="sendLink">Invite a fren (+1000 KTC)</div>
       <div class="hr"></div>
