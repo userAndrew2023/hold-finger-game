@@ -1,5 +1,5 @@
 <template>
-    <div class="tasks_wrapper">
+    <div class="tasks_wrapper" v-if="true">
         <div class="tasks_group">
             <div v-for="task in tasks" :key="task.id" class="task">
                 <div class="task-inner">
@@ -18,6 +18,11 @@
                     <span class="material-symbols-outlined">arrow_forward_ios</span>
                 </div>
             </div>
+        </div>
+    </div>
+    <div v-else>
+        <div style="padding-top: 100px">
+            <h1>Soon 🚀</h1>
         </div>
     </div>
 </template>

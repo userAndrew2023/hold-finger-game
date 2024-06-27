@@ -3,7 +3,7 @@
     <img src="@/assets/image.png" class="mini-logo">  
     <div>{{ currentUser.balance }}</div>
   </div>
-  <h2 class="tip">Hold Your Finger</h2>
+  <h2 class="tip">Just keep your finger. For now</h2>
   <div
     class="hold-area"
     @touchstart="startHold"
@@ -52,7 +52,7 @@ export default {
           holdTime.value += 0.1;
           holdTime.value = Number(holdTime.value.toFixed(1));
           if (Number.isInteger(holdTime.value)) {
-            currentUser.value.balance += 1;
+            currentUser.value.balance += 100;
           }
         }, 100);
       }
