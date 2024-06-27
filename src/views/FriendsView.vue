@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
     <div>
       <div class="invite-label">40% from each fren!</div>
       <div class="copy-link" @click="sendLink">Invite a fren (+1000 KTC)</div>
@@ -31,7 +31,12 @@
       </div>
       <ToastNotification ref="toastNotification" />
     </div>
-  </template>
+  </template> -->
+<template>
+    <div style="padding-top: 100px">
+        <h1>Soon 🚀</h1>
+    </div>
+</template>
   
   <script lang="ts">
   import { defineComponent, ref } from 'vue';

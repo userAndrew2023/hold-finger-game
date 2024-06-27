@@ -52,7 +52,7 @@ export default {
           holdTime.value += 0.1;
           holdTime.value = Number(holdTime.value.toFixed(1));
           if (Number.isInteger(holdTime.value)) {
-            currentUser.value.balance += 10;
+            currentUser.value.balance += 1;
           }
         }, 100);
       }
