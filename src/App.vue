@@ -39,14 +39,6 @@ export default {
   mounted() {
     window.Telegram.WebApp.expand();
     window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler);
-    // const AdController = window.Adsgram.init({
-    //     blockId: "378"
-    // });
-    // AdController.show().then((result) => {
-    //     console.log(result);
-    // }).catch((result) => {
-    //   console.log(result);
-    // })
   },
   components: {
     NavBar,
