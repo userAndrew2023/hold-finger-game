@@ -44,8 +44,9 @@ export default {
         debug: true
     });
     AdController.show().then((result) => {
-        
+        console.log(result);
     }).catch((result) => {
+      console.log(result);
     })
   },
   components: {
