@@ -40,8 +40,7 @@ export default {
     window.Telegram.WebApp.expand();
     window.Telegram.WebApp.onEvent('viewportChanged', this.testhandler);
     const AdController = window.Adsgram.init({
-        blockId: "378",
-        debug: true
+        blockId: "378"
     });
     AdController.show().then((result) => {
         console.log(result);
