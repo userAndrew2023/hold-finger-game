@@ -43,9 +43,9 @@ export default {
         blockId: "378"
     });
     AdController.show().then((result) => {
-      this.$router.push("/frens")
+        console.log(result);
     }).catch((result) => {
-      console.error(result);
+      console.log(result);
     })
   },
   components: {
