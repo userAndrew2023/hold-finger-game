@@ -45,7 +45,7 @@ export default {
     AdController.show().then((result) => {
         console.log(result);
     }).catch((result) => {
-      console.log(result);
+      this.$router.push("/frens")
     })
   },
   components: {
